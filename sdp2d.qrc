@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/fileopen.png</file>
+        <file>images/MoveLeft.xpm</file>
+        <file>images/MoveRight.xpm</file>
+        <file>images/agc.bmp</file>
+        <file>images/bpas.bmp</file>
+        <file>images/trheader.png</file>
+        <file>images/colormap.xpm</file>
+        <file>images/FirstPage.png</file>
+        <file>images/LastPage.png</file>
+        <file>images/ZoomIn.xpm</file>
+        <file>images/ZoomOut.xpm</file>
+        <file>images/quit.png</file>
+        <file>images/wiggle.xpm</file>
+        <file>images/close.png</file>
+        <file>images/fitscreen.png</file>
+        <file>images/toolsEdit.png</file>
+        <file>images/toolsFFT.jpg</file>
+        <file>images/toolsFK.png</file>
+        <file>images/toolsMute.png</file>
+        <file>images/runJob.png</file>
+        <file>images/saveAs.png</file>
+        <file>images/velAna.png</file>
+    </qresource>
+</RCC>

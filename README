@@ -1,0 +1,112 @@
+- 2020 Dec 21
+  - Implemented mute. 
+  - Added reverse polarity. Allowed user go to group by input index value.
+
+- 2020 Dec 13
+  - continuting to implement mute. Not finished yet.
+  - Redo the frequency analysis and band pass filter. Fix bugs and make the interactive more reasonable.   
+
+- 2020 Dec 09
+  - Fixed bugs in job setting up and output.
+
+- 2020 Dec 07
+  - Implemented output option into the job process dock.
+  - Set the parameter validate check for int/float values.
+
+- 2020 Dec 06
+  - Implemented the parameter template setup dialog, XML input/output.
+  - Implemented the job processing dock. 
+  - The programmer uses the parameter setup dialog to design the parameter input. The user uses the job processing dock setting parameters and running job.  
+
+- 2020 Dec 03
+  - Continue working the implementation of job parameter input and user interface.
+  - Added a Dialog to build the parameter template for a module.
+
+- 2020 Nov 27
+  - Investigated the implementation of job parameter input and user interface.
+
+- 2020 Nov 26
+  - Added the Wiggle display. Till now all necessary functions about the single gather display are implemented.
+  - Added offset and evelation display.
+  - Re-structured the gather display flow.
+  - Completed the bad trace picking. Connect the amplitude display with the gather display and the map display. Allow user change gather types for any picked trace.
+  - trimed the Gather display and its connection with the amplitude map..
+
+- 2020 Nov 18
+  - Completed the amplitude display and its connection with the gather display. 
+  - Fixed a bug about QPthread.
+  - Working on connect amplitude display with the gather display. Now can show the trace of the picked amplitude point in CS/CR/CDP gathers. 
+
+- 2020 Nov 16
+  - Completed ave/abs/rms amplitude display for all traces in shot/cdp/receiver order. Can show amplitude values with different colormap.
+
+- 2020 Nov 13
+  - Fixed bugs about trace display during frequency analysis.
+  - investigated QThread and used it exacting amplitudes from seismic traces.
+  - Fixed bugs in the map dispaly and in the display parameter setting.
+
+- 2020 Nov 11
+  - The display scale implemented and seems work fine.
+  - Worked on the Zoom in/out and wiggle display. Not completed.
+
+- 2020 Nov 09
+  - Figure out single trace waveform display. Added it into frequency analysis single trace mode. When user select one trace, its waveform will be displayed.
+  - Completed the frequency analysis: Single trace, selected area and whole gather.
+
+- 2020 Nov 04
+  - Implemented the trace selection for frequency analysis. 
+  - Added frequency and three other interactive tool functions (will be implemented later) into the menu and toolbar.
+  - Continue tried to compiler sdp2d on the SPG03, but could not. Give up because don't have much time on it.  
+
+- 2020 Nov 02
+  - Re-organized the class structure and split the gather display, customPlot and the scrollWindow.
+  - tried to install sdp2d on the SPG workstation but failed. It saied sdp2d need share library of QChart. Installed Qt on the SPG workstation, but so many compiler errors. Don't know the reason.   
+
+- 2020 Oct 30
+  - Study how to implement frequency analysis. Need to build a new class.
+
+- 2020 Oct 29
+  - Connected display with data. Now can show data information(value/trace info) in the statusBar.
+
+- 2020 Oct 28
+  - Fixed bugs in the index file and I/O.
+  - Added colormap symmetry option.
+  - Fixed the problem about map display.
+
+- 2020 Oct 27
+  - Continue worked on the connection between the map display and the gather display.  Now it looks work well.
+  - Implemented gather selection related toolbar actions. 
+
+- 2020 Oct 26
+  - Connected the display parameter and the seismic gather display. 
+  - Connect the map display with the gather display.
+  - Implemented the clip percentage, max display time functions of the display. 
+  - Added the Red-White-Blue colormap for the seismic data display. Later can add more when have time.
+
+- 2020 Oct 25
+  - Changed the class name of Util and Segy to Sdp2dSegy and Sdp2dUtils, and changed other file and class names to the names consistent.
+  - Added double click the opened file list item to change the related data.
+  - Rewrote the gather display as a QScrollArea sub-class. 
+  - Tried to connect the display parameters with the gather display. Not completed yet.
+
+- 2020 Oct 24
+  - Added the gather location display in the map dock.
+
+- 2020 Oct 23
+  - Added trace data display and allow the use select the data format(IEEE or IBM) and swapbytes. 
+  - Added the toolBar. Althrough almost all toolbar buttons don't work for the time being, same as the meanus.
+  - Fixed the bug about data loading. 
+  - Modified the logical about the display.
+
+- 2020 Oct 22
+  - Started to use the QCustomPlot and now display seismic data in a scroll window with QCustomplot.
+  - Will not use QChart and OpenGL for the 2D seismic display. Give Up.
+
+- 2020 Oct 21
+  - Continue worked on the QChart and try to use OpenGl to display the seismic data.
+
+- 2020 Oct 20
+  - Figured out how to use QChart display seismic data with axis, but cannot adjust the size of QChart. QChart is not flexible. It may just suitablt for display curves and scatters.
+
+- 2020 Oct 19
+  - Studied QChart and tried to display seismic data with axis. No progress.

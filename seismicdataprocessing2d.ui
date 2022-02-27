@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SeismicDataProcessing2D</class>
+ <widget class="QMainWindow" name="SeismicDataProcessing2D">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Seismic Data Processing 2D</string>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks</set>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="startupFrame">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>10</y>
+      <width>1141</width>
+      <height>651</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>40</y>
+       <width>83</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Open File:    </string>
+     </property>
+    </widget>
+    <widget class="QSplitter" name="splitter">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>90</y>
+       <width>1141</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLineEdit" name="startupOpenFileLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>40</y>
+       <width>791</width>
+       <height>25</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="startupSelectFileBtn">
+     <property name="geometry">
+      <rect>
+       <x>980</x>
+       <y>40</y>
+       <width>80</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Select</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="startupFileInfoFrame">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>110</y>
+       <width>1021</width>
+       <height>531</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>145</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Recent Opened Files:</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="startupRecentFIlesListWidget">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>50</y>
+        <width>791</width>
+        <height>461</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="sartupCancelBtn">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>680</y>
+      <width>80</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="startupOKBtn">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>680</y>
+      <width>80</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>OK</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menusFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action_load_segy_file"/>
+    <addaction name="action_saveas_segy_file"/>
+    <addaction name="action_close_current_file"/>
+    <addaction name="separator"/>
+    <addaction name="action_quit_all"/>
+   </widget>
+   <widget class="QMenu" name="menuDisplay">
+    <property name="title">
+     <string>&amp;Display</string>
+    </property>
+    <addaction name="action_display_offsetelev"/>
+    <addaction name="separator"/>
+    <addaction name="action_display_wt_gather"/>
+    <addaction name="action_display_vd_gather"/>
+    <addaction name="separator"/>
+    <addaction name="action_display_next_gather"/>
+    <addaction name="action_display_previous_gather"/>
+    <addaction name="action_display_first_gather"/>
+    <addaction name="action_display_last_gather"/>
+    <addaction name="separator"/>
+    <addaction name="action_display_zoomin"/>
+    <addaction name="action_display_zoomout"/>
+    <addaction name="action_display_zoomfit"/>
+    <addaction name="separator"/>
+    <addaction name="action_display_parameters"/>
+   </widget>
+   <widget class="QMenu" name="menuProcessing">
+    <property name="title">
+     <string>&amp;Processing</string>
+    </property>
+    <addaction name="action_processing_showdock"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>&amp;Tools</string>
+    </property>
+    <addaction name="action_tools_FrequencyAnalysis"/>
+    <addaction name="action_tools_BadTraceSelection"/>
+    <addaction name="action_tools_StackVelocityAnalysis"/>
+    <addaction name="action_tools_PickingMute"/>
+    <addaction name="separator"/>
+    <addaction name="action_tools_buildModuleParameters"/>
+   </widget>
+   <widget class="QMenu" name="menuWindows">
+    <property name="title">
+     <string>&amp;Windows</string>
+    </property>
+    <addaction name="action_show_open_file_list"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="action_about_SDP2D"/>
+   </widget>
+   <addaction name="menusFile"/>
+   <addaction name="menuDisplay"/>
+   <addaction name="menuProcessing"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuWindows"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <action name="action_load_segy_file">
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/fileopen.png</normaloff>:/images/fileopen.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Load SEGY</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="action_saveas_segy_file">
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/saveAs.png</normaloff>:/images/saveAs.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Save as...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_close_current_file">
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/close.png</normaloff>:/images/close.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Close File</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="action_quit_all">
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/quit.png</normaloff>:/images/quit.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+Q</string>
+   </property>
+  </action>
+  <action name="action_display_offsetelev">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/trheader.png</normaloff>:/images/trheader.png</iconset>
+   </property>
+   <property name="text">
+    <string>Display Offset and Elev</string>
+   </property>
+  </action>
+  <action name="action_display_wt_gather">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/wiggle.xpm</normaloff>:/images/wiggle.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Wiggle Trace</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="action_display_vd_gather">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/colormap.xpm</normaloff>:/images/colormap.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Variable Density</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="action_display_next_gather">
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/MoveRight.xpm</normaloff>:/images/MoveRight.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Next Gather</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+Right</string>
+   </property>
+  </action>
+  <action name="action_display_previous_gather">
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/MoveLeft.xpm</normaloff>:/images/MoveLeft.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Previous Gather</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+Left</string>
+   </property>
+  </action>
+  <action name="action_display_first_gather">
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/FirstPage.png</normaloff>:/images/FirstPage.png</iconset>
+   </property>
+   <property name="text">
+    <string>First Gather</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Left</string>
+   </property>
+  </action>
+  <action name="action_display_last_gather">
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/LastPage.png</normaloff>:/images/LastPage.png</iconset>
+   </property>
+   <property name="text">
+    <string>Last Gather</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Right</string>
+   </property>
+  </action>
+  <action name="action_display_zoomin">
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/ZoomIn.xpm</normaloff>:/images/ZoomIn.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom In</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+=</string>
+   </property>
+  </action>
+  <action name="action_display_zoomout">
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/ZoomOut.xpm</normaloff>:/images/ZoomOut.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom Out</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+-</string>
+   </property>
+  </action>
+  <action name="action_display_zoomfit">
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/fitscreen.png</normaloff>:/images/fitscreen.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom to Fit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F</string>
+   </property>
+  </action>
+  <action name="action_display_parameters">
+   <property name="text">
+    <string>Display Parameters</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="action_processing_showdock">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Show processing dock</string>
+   </property>
+  </action>
+  <action name="action_tools_buildModuleParameters">
+   <property name="text">
+    <string>Build Module Parameters</string>
+   </property>
+  </action>
+  <action name="action_show_open_file_list">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Open Files</string>
+   </property>
+  </action>
+  <action name="action_about_SDP2D">
+   <property name="text">
+    <string>About SDP2D</string>
+   </property>
+  </action>
+  <action name="action_tools_FrequencyAnalysis">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/toolsFFT.jpg</normaloff>:/images/toolsFFT.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Frequency Analysis</string>
+   </property>
+  </action>
+  <action name="action_tools_StackVelocityAnalysis">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/velAna.png</normaloff>:/images/velAna.png</iconset>
+   </property>
+   <property name="text">
+    <string>Stack Velocity nanlysis</string>
+   </property>
+  </action>
+  <action name="action_tools_BadTraceSelection">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/toolsEdit.png</normaloff>:/images/toolsEdit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Bad Trace Selection</string>
+   </property>
+  </action>
+  <action name="action_tools_PickingMute">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sdp2d.qrc">
+     <normaloff>:/images/toolsMute.png</normaloff>:/images/toolsMute.png</iconset>
+   </property>
+   <property name="text">
+    <string>Picking Mute</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="sdp2d.qrc"/>
+ </resources>
+ <connections/>
+</ui>
